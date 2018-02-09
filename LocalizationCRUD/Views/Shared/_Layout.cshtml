@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="@RouteJs.RouteJsHandler.HandlerUrl"></script>
     <title>@ViewBag.Title - Applicazione ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -44,8 +47,8 @@
                 <div class="modal-body elenco-modal">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="buttonClose">Chiudi</button>
-                    <button type="button" class="btn btn-default HideDiv" id="buttonSaveOutward">Ok</button>
+                    <button type="button" class="btn btn-default" id="buttonClose" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-default HideDiv" id="buttonSaveOutward">Save</button>
                 </div>
             </div>
         </div>

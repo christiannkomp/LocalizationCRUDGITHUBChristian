@@ -46,7 +46,7 @@ namespace LocalizationCRUD.Controllers
                 data.ResultList = x.ToList();
 
             }
-            return View(data);
+            return View("SearchCriteria",data);
         }
 
 
@@ -75,7 +75,7 @@ namespace LocalizationCRUD.Controllers
 
             //    }
             //}
-           
+
 
             //return View("Index");
             return View();
@@ -105,9 +105,12 @@ namespace LocalizationCRUD.Controllers
 
         public ActionResult Edit(int idModulo, string labelFor, string lingua, string label)
         {
-          
-                        
-                return View();
+            return View();
+        }
+
+        public ActionResult _PartialEdit(int idModulo, string labelFor, string lingua, string label)
+        {
+            return PartialView();
         }
 
         public ActionResult DoEdit(RisorseLocalizzazioneLabel data)
@@ -117,7 +120,7 @@ namespace LocalizationCRUD.Controllers
             {
                 x = db.RisorseLocalizzazioneLabel.Where(l => l.idModulo == data.idModulo && l.labelFor == data.labelFor && l.lingua == data.lingua).FirstOrDefault();
 
-                if(x != null)
+                if (x != null)
                 {
                     x.label = data.label;
 
@@ -136,7 +139,7 @@ namespace LocalizationCRUD.Controllers
 
                 db.SaveChanges();
             }
-            return View("Index");
+            return SearchCriteria(new SearchClassLabel());
         }
 
         public ActionResult Delete(int idModulo, string labelFor, string lingua)
@@ -146,7 +149,7 @@ namespace LocalizationCRUD.Controllers
             {
                 x = db.RisorseLocalizzazioneLabel.Where(l => l.idModulo == idModulo && l.labelFor == labelFor && l.lingua == lingua).FirstOrDefault();
 
-            
+
             }
 
 
@@ -160,11 +163,11 @@ namespace LocalizationCRUD.Controllers
             {
                 x = db.RisorseLocalizzazioneLabel.Where(l => l.idModulo == idModulo && l.labelFor == labelFor && l.lingua == lingua).FirstOrDefault();
 
-                   if(x != null)
-                    {
-                        db.RisorseLocalizzazioneLabel.Remove(x);
-                        db.SaveChanges();
-                    }
+                if (x != null)
+                {
+                    db.RisorseLocalizzazioneLabel.Remove(x);
+                    db.SaveChanges();
+                }
             }
 
 
@@ -173,4 +176,3 @@ namespace LocalizationCRUD.Controllers
 
     }
 }
- 

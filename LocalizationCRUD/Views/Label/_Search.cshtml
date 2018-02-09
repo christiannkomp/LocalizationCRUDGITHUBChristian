@@ -57,9 +57,8 @@
 <script type="text/javascript">
     function ShowEditModal(idModulo, labelFor, lingua, label) {
 
-        $("#showModal").modal('show');
-
-
+        $('#showModal .modal-body').load(Router.action('Label', '_PartialEdit', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
+        $('#showModal').modal("show");
 
 
     }
