@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Message";
+}
+
+<h2>Ricerca, Inseriremento, Aggiornamento & Cancellare di un Message</h2>
+<div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Ricercare un Messaggio nel database
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "SearchCriteria", "Message")">Ricerca</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                inserisci un Messaggio nel database.
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Insert", "Message")">Inserisci</a></p>
+        </div>
+    </div>
+
+    @*<div class="row">
+        <div class="col-md-4">
+            <p>
+                Aggiornare un Messagio nel database
+            </p>
+            <p><a class="btn btn-default" href="#">Aggiorna</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Cancella un Messaggio nel database
+            </p>
+            <p><a class="btn btn-default" href="#">Cancella</a></p>
+        </div>
+    </div>*@
+</div>
+
+

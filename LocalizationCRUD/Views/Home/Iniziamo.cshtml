@@ -1,0 +1,55 @@
+﻿@model LocalizationCRUD.FilterConfig
+
+@{
+    ViewBag.Title = "Iniziamo";
+}
+
+<h2>Create, Research, Edit and Delete fields in two tables</h2>
+<h3>(Label and Message)</h3>
+@*<div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                xxxxxx.
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Label", "Home")">Label</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+            <p>
+                xxxxxx.
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Message", "Iniziamo")">Message</a></p>
+        </div>
+    </div>*@
+@*<div>
+    <p>xxxxxx.</p>
+    <a type="button" class="btn btn-primary btn-lg btn-block" href="@Url.Action( "Index", "Label")">Label</a>
+</div>
+<div>
+    <p>xxxxxx.</p>
+    <a type="button" class="btn btn-secondary btn-lg btn-block" href="@Url.Action( "Index", "Label")">Message</a>
+</div>*@
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Label</h3>
+                <p class="card-text">Gestisci la tabella Label</p>
+                <a href="@Url.Action( "Index", "Label")" class="btn btn-primary">Go To Label</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Message</h3>
+                <p class="card-text">Gestisci la tabella Message</p>
+                <a href="@Url.Action( "Index", "Message")" class="btn btn-primary">Go To Message</a>
+            </div>
+        </div>
+    </div>
+</div>

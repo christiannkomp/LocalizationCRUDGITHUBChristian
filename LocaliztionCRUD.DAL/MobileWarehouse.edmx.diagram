@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f84ce03938f4c71b17a355bb4bbf256" Name="Diagram1">
+        <EntityTypeShape EntityType="MobileWarehouseModel.RisorseLocalizzazioneLabel" Width="3.25" PointX="0.75" PointY="0.625" IsExpanded="true" FillColor="0, 0, 64" />
+        <EntityTypeShape EntityType="MobileWarehouseModel.RisorseLocalizzazioneMessage" Width="3.125" PointX="4.875" PointY="0.625" IsExpanded="true" FillColor="0, 0, 64" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

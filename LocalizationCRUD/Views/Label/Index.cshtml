@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ricerca, Inseriremento, Aggiornamento & Cancellare una Label</h2>
+<div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Ricercare una Label nel database
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "SearchCriteria", "Label")">Ricerca</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                inserisci una Label nel database.
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Insert", "Label")">Inserisci</a></p>
+        </div>
+    </div>
+
+    @*<div class="row">
+        <div class="col-md-4">
+            <p>
+                Aggiornare una Label nel database
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Update", "Label")">Aggiorna</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Cancella una Label nel database
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action( "Cancel", "Label")">Cancella</a></p>
+        </div>
+    </div>*@
+</div>

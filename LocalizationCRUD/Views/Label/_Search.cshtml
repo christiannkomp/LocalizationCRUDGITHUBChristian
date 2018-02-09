@@ -1,0 +1,67 @@
+﻿@model IEnumerable<LocaliztionCRUD.DAL.RisorseLocalizzazioneLabel>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Search")
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idModulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.labelFor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lingua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.label)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idModulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.labelFor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lingua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.label)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { idModulo = item.idModulo, labelfor = item.labelFor, lingua = item.lingua, label = item.label }) |
+                @Html.ActionLink("Delete", "Delete", new { idModulo=item.idModulo,labelfor = item.labelFor, lingua = item.lingua  })
+                <a class="btn btn-default" onclick="ShowEditModal('@item.idModulo', '@item.labelFor', '@item.lingua',  '@item.label')">Edit</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<script type="text/javascript">
+    function ShowEditModal(idModulo, labelFor, lingua, label) {
+
+        $("#showModal").modal('show');
+
+    }
+
+
+
+</script>
+
