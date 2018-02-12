@@ -45,11 +45,33 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { idModulo = item.idModulo, labelfor = item.labelFor, lingua = item.lingua, label = item.label }) |
-                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                @Html.ActionLink("Delete", "Delete", new { idModulo=item.idModulo,labelfor = item.labelFor, lingua = item.lingua  })
+                @Html.ActionLink("Delete", "Delete", new { idModulo = item.idModulo, labelfor = item.labelFor, lingua = item.lingua })
+                <a class="btn btn-default" onclick="ShowEditModal('@item.idModulo', '@item.labelFor', '@item.lingua',  '@item.label')">Edit</a>
+                <a class="btn btn-default" onclick="ShowDeleteModal('@item.idModulo', '@item.labelFor', '@item.lingua',  '@item.label')">Delete</a>
             </td>
         </tr>
     }
 
 </table>
+
+<script type="text/javascript">
+    function ShowEditModal(idModulo, labelFor, lingua, label) {
+
+        $('#showModal .modal-body').load(Router.action('Label', '_PartialEdit', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
+        $('#showModal').modal("show");
+
+
+    }
+
+    function ShowDeleteModal(idModulo, labelFor, lingua, label) {
+
+        $('#showModal .modal-body').load(Router.action('Label', '_PartialDelete', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
+        $('#showModal').modal("show");
+
+
+    }
+
+
+
+</script>
 

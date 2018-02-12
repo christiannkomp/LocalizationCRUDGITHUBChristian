@@ -226,6 +226,9 @@
     <Content Include="Views\Message\Edit.cshtml" />
     <Content Include="Views\Home\Iniziamo.cshtml" />
     <Content Include="Views\Label\_PartialEdit.cshtml" />
+    <Content Include="Views\Label\_PartialDelete.cshtml" />
+    <Content Include="Views\Message\_PartialDelete.cshtml" />
+    <Content Include="Views\Message\_PartialEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

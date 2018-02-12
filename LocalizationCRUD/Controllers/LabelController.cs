@@ -108,10 +108,7 @@ namespace LocalizationCRUD.Controllers
             return View();
         }
 
-        public ActionResult _PartialEdit(int idModulo, string labelFor, string lingua, string label)
-        {
-            return PartialView();
-        }
+       
 
         public ActionResult DoEdit(RisorseLocalizzazioneLabel data)
         {
@@ -140,6 +137,16 @@ namespace LocalizationCRUD.Controllers
                 db.SaveChanges();
             }
             return SearchCriteria(new SearchClassLabel());
+        }
+
+        public ActionResult _PartialEdit(int idModulo, string labelFor, string lingua, string label)
+        {
+            return PartialView();
+        }
+
+        public ActionResult _PartialDelete(int idModulo, string labelFor, string lingua, string label)
+        {
+            return PartialView();
         }
 
         public ActionResult Delete(int idModulo, string labelFor, string lingua)
@@ -171,8 +178,11 @@ namespace LocalizationCRUD.Controllers
             }
 
 
-            return View("Index");
+            return SearchCriteria(new SearchClassLabel());
         }
 
+
+        
+       
     }
 }

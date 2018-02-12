@@ -113,6 +113,16 @@ namespace LocalizationCRUD.Controllers
             return View();
         }
 
+        public ActionResult _PartialEdit(int idModulo, string labelFor, string lingua, string label)
+        {
+            return PartialView();
+        }
+
+        public ActionResult _PartialDelete(int idModulo, string labelFor, string lingua, string label)
+        {
+            return PartialView();
+        }
+
         public ActionResult DoEdit(RisorseLocalizzazioneMessage data)
         {
             RisorseLocalizzazioneMessage x = null;
@@ -171,7 +181,7 @@ namespace LocalizationCRUD.Controllers
             }
 
 
-            return View("Index");
+            return SearchCriteria(new SearchClassMessage());
         }
 
     }
