@@ -2,14 +2,20 @@
 using LocaliztionCRUD.DAL;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Filters;
+using System.Web.Routing;
 
 namespace LocalizationCRUD.Controllers
 {
     public class LabelController : Controller
     {
+        //protected override bool DisableAsyncSupport => base.DisableAsyncSupport;
+
         // GET: Label
         public ActionResult Index()
         {
@@ -97,18 +103,34 @@ namespace LocalizationCRUD.Controllers
                 }
             }
 
-
             return View("Index");
         }
 
-
-
-        public ActionResult Edit(int idModulo, string labelFor, string lingua, string label)
+        public JsonResult DoInsertJson(RisorseLocalizzazioneLabel data)
         {
-            return View();
+
+            if (data.idModulo != 0 && !string.IsNullOrEmpty(data.labelFor) && !string.IsNullOrEmpty(data.lingua) && !string.IsNullOrEmpty(data.label))
+            {
+                using (MobileWarehouseEntities db = new MobileWarehouseEntities())
+                {
+                    db.RisorseLocalizzazioneLabel.Add(data);
+
+                    db.SaveChanges();
+
+
+                }
+            }
+
+            //in dollaro fa capire al compilatore che tutto ciò che c'è scritto nella stringa in graffe lo deve andare a sostituire nella stringa con valore.
+            return Json(new { messaggio = $"Label {data.idModulo} aggiunta con successo" });
+            //return Json(true);
         }
 
-       
+
+
+        public ActionResult Edit(int idModulo, string labelFor, string lingua, string label) => View();
+
+
 
         public ActionResult DoEdit(RisorseLocalizzazioneLabel data)
         {
@@ -146,7 +168,15 @@ namespace LocalizationCRUD.Controllers
 
         public ActionResult _PartialDelete(int idModulo, string labelFor, string lingua, string label)
         {
-            return PartialView();
+            RisorseLocalizzazioneLabel x = null;
+            using (MobileWarehouseEntities db = new MobileWarehouseEntities())
+            {
+                x = db.RisorseLocalizzazioneLabel.Where(l => l.idModulo == idModulo && l.labelFor == labelFor && l.lingua == lingua).FirstOrDefault();
+
+
+            }
+
+            return PartialView(x);
         }
 
         public ActionResult Delete(int idModulo, string labelFor, string lingua)
@@ -181,8 +211,5 @@ namespace LocalizationCRUD.Controllers
             return SearchCriteria(new SearchClassLabel());
         }
 
-
-        
-       
     }
 }

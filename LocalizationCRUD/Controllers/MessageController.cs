@@ -48,7 +48,7 @@ namespace LocalizationCRUD.Controllers
                 data.ResultList = x.ToList();
 
             }
-            return View(data);
+            return View("SearchCriteria",data);
         }
 
 
@@ -104,6 +104,26 @@ namespace LocalizationCRUD.Controllers
             return View("Index");
         }
 
+        public JsonResult DoInsertJson(RisorseLocalizzazioneLabel data)
+        {
+
+            if (data.idModulo != 0 && !string.IsNullOrEmpty(data.labelFor) && !string.IsNullOrEmpty(data.lingua) && !string.IsNullOrEmpty(data.label))
+            {
+                using (MobileWarehouseEntities db = new MobileWarehouseEntities())
+                {
+                    db.RisorseLocalizzazioneLabel.Add(data);
+
+                    db.SaveChanges();
+
+
+                }
+            }
+
+            //in dollaro fa capire al compilatore che tutto ciò che c'è scritto nella stringa in graffe lo deve andare a sostituire nella stringa con valore.
+            return Json(new { messaggio = $"Message {data.idModulo} aggiunta con successo" });
+            //return Json(true);
+        }
+
 
 
         public ActionResult Edit(int idModulo, string labelFor, string lingua, string label)
@@ -120,7 +140,16 @@ namespace LocalizationCRUD.Controllers
 
         public ActionResult _PartialDelete(int idModulo, string labelFor, string lingua, string label)
         {
-            return PartialView();
+            RisorseLocalizzazioneMessage x = null;
+            using (MobileWarehouseEntities db = new MobileWarehouseEntities())
+            {
+                x = db.RisorseLocalizzazioneMessage.Where(l => l.idModulo == idModulo && l.labelFor == labelFor && l.lingua == lingua).FirstOrDefault();
+
+
+            }
+
+
+            return PartialView(x);
         }
 
         public ActionResult DoEdit(RisorseLocalizzazioneMessage data)

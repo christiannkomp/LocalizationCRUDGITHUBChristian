@@ -57,7 +57,7 @@
 <script type="text/javascript">
     function ShowEditModal(idModulo, labelFor, lingua, label) {
 
-        $('#showModal .modal-body').load(Router.action('Label', '_PartialEdit', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
+        $('#showModal .modal-body').load(Router.action('Message', '_PartialEdit', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
         $('#showModal').modal("show");
 
 
@@ -65,7 +65,7 @@
 
     function ShowDeleteModal(idModulo, labelFor, lingua, label) {
 
-        $('#showModal .modal-body').load(Router.action('Label', '_PartialDelete', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
+        $('#showModal .modal-body').load(Router.action('Message', '_PartialDelete', { idModulo: idModulo, labelFor: labelFor, lingua: lingua, label: label }));
         $('#showModal').modal("show");
 
 
