@@ -14,9 +14,7 @@ namespace LocalizationCRUD.Controllers
 {
     public class LabelController : Controller
     {
-        //protected override bool DisableAsyncSupport => base.DisableAsyncSupport;
-
-        // GET: Label
+        
         public ActionResult Index()
         {
             return View();
@@ -173,7 +171,7 @@ namespace LocalizationCRUD.Controllers
             {
                 x = db.RisorseLocalizzazioneLabel.Where(l => l.idModulo == idModulo && l.labelFor == labelFor && l.lingua == lingua).FirstOrDefault();
 
-
+                
             }
 
             return PartialView(x);

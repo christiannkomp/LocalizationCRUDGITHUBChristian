@@ -216,14 +216,12 @@
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Label\_Search.cshtml" />
     <Content Include="Views\Label\Insert.cshtml" />
-    <Content Include="Views\Label\Cancel.cshtml" />
     <Content Include="Views\Label\SearchCriteria.cshtml" />
     <Content Include="Views\Label\Delete.cshtml" />
     <Content Include="Views\Label\Edit.cshtml" />
     <Content Include="Views\Message\Insert.cshtml" />
     <Content Include="Views\Message\SearchCriteria.cshtml" />
     <Content Include="Views\Message\_Search.cshtml" />
-    <Content Include="Views\Message\Cancel.cshtml" />
     <Content Include="Views\Message\Delete.cshtml" />
     <Content Include="Views\Message\Edit.cshtml" />
     <Content Include="Views\Home\Iniziamo.cshtml" />
